@@ -1,0 +1,83 @@
+:root {
+	--light-brown: #ae8c71;
+	--light-yellow: #efe3b8;
+	--medium-brown: #80573a;
+	--black: #000000;
+	--white: #ffffff;
+	--dark-brown: #422315;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-div {
+	width: 400px;
+}
+
+.logo {
+	width: 100%;
+}
+
+.welcome-div {
+	font-size: 5rem;
+	max-width: 700px;
+	line-height: 1.1em;
+}
+
+.welcome-title {
+	color: var(--light-brown);
+	margin-bottom: 35px;
+}
+
+.welcome-btn {
+	background: transparent;
+	border: 1px solid var(--medium-brown);
+	color: var(--medium-brown);
+	padding: 20px;
+	width: 240px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.cat-div {
+	width: 950px;
+	position: relative;
+}
+
+.cat {
+	width: 100%;
+}
+
+.info-div {
+	position: absolute;
+	right: 80px;
+	bottom: 60px;
+	width: 60px;
+}
+
+.info {
+	width: 100%;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 50px;
+	max-width: 2000px;
+}
+
+.left-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 50px 0;
+}

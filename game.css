@@ -1,0 +1,146 @@
+:root {
+	--light-brown: #ae8c71;
+	--light-yellow: #efe3b8;
+	--medium-brown: #80573a;
+	--black: #000000;
+	--white: #ffffff;
+	--dark-brown: #422315;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-div {
+ margin-left: 50px;
+ margin-top: 20px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+ flex-direction: row;
+ gap: 100px;
+ place-content: center;
+ margin-top: 100px;
+}
+
+.game-div {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 100px;
+}
+
+.game-answers-div {
+	width: 600px;
+	height: 620px;
+}
+
+.logo-div {
+	width: 400px;
+}
+
+.logo {
+	width: 100%;
+}
+
+.image-div {
+	border: 2px solid black;
+	vertical-align: bottom;
+	height: 620px;
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+}
+
+.image {
+	width: 80%;
+	height: 80%;
+	align-self: center;
+}
+
+.image-logo-div {
+	text-align: right;
+	margin-top: 20px;
+	width: 580px;
+}
+
+.image-logo {
+	width: 50%;
+}
+
+.question-title {
+	font-size: 5rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.answers-div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+ justify-content: center;
+	gap: 50px;
+}
+
+.answers-div button {
+	display: inline-block;
+	border: none;
+	background-color: var(--light-yellow);
+	cursor: pointer;
+	padding: 25px;
+	width: 550px;
+	height: 130px;
+	text-align-last: left;
+	font-weight: bold;
+	font-size: 3rem;
+	color: var(--light-brown);
+	border-radius: 40px;
+	vertical-align: bottom;
+}
+
+.third-div {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.third-buttons-div {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+
+}
+
+.question-count {
+	margin-top: 20px;
+	font-size: 3.5rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.third-btn {
+	display: block;
+	padding: 25px;
+	border: none;
+	font-size: 4rem;
+	text-align: center;
+	background-color: var(--light-brown);
+	color: #efe3b8;
+	font-weight: bold;
+	border-radius: 40px;
+	width: 480px;
+ cursor: pointer;
+	margin-top: 10px;
+
+}

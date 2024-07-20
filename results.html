@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Results</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="left-div">
+				<div class="logo-div">
+					<a href="index.html">
+						<img src="resources/logo.png" alt="Logo" class="logo" />
+					</a>
+				</div>
+
+				<div class="welcome-div">
+					<p class="score" style="color: #422315; font-weight: bold"></p>
+					<p
+						class="description"
+						style="color: #ae8c71; width: 600px; font-size: 3rem"
+					>
+						Congratulations! You know the names of
+						<span class="many"></span> cats
+					</p>
+					<button class="restart-btn welcome-btn">Restart</button>
+					<button class="share-btn welcome-btn">Share</button>
+				</div>
+			</div>
+
+			<div class="right-div">
+				<div class="cat-div">
+					<img src="resources/mainpagekit.png" alt="Cat Image" class="cat" />
+					<div class="info-div">
+						<a href="credits.html"
+							><img
+								src="resources/information.png"
+								alt="Information"
+								class="info"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Retrieve score and total questions from local storage
+			const score = parseInt(localStorage.getItem("score"), 10);
+			const total = parseInt(localStorage.getItem("total"), 10);
+
+			// Calculate the number of correctly answered questions
+			const correctAnswers = score; // Since score equals the number of correct answers
+
+			// Display the result
+			document.querySelector(
+				".score"
+			).textContent = `Your result: ${score}/${total}`;
+			document.querySelector(".many").textContent = correctAnswers;
+
+			// Handle restart button
+			document.querySelector(".restart-btn").addEventListener("click", () => {
+				// Clear local storage
+				localStorage.removeItem("score");
+				localStorage.removeItem("total");
+
+				// Redirect back to the main game page
+				window.location.href = "game.html";
+			});
+
+			// Handle share button
+			document.querySelector(".share-btn").addEventListener("click", () => {
+				const shareButton = document.querySelector(".share-btn");
+				shareButton.style.display = "none"; // Hide the share button
+
+				html2canvas(document.body, { scale: 2 }).then((canvas) => {
+					// Convert the canvas to a data URL
+					const imgData = canvas.toDataURL("image/png");
+
+					// Create a download link and click it to download the image
+					const link = document.createElement("a");
+					link.href = imgData;
+					link.download = "screenshot.png";
+					document.body.appendChild(link);
+					link.click();
+					document.body.removeChild(link);
+
+					// Show the share button again after the screenshot is taken
+					shareButton.style.display = "inline-block";
+				});
+			});
+		</script>
+	</body>
+</html>
